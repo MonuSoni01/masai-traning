@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 90px;
+            margin-bottom: 30px
+        }
+
+        #container {
+            box-shadow: -1px 1px 8px -1px #000;
+            border-radius: 10px;
+            width: 340px;
+            padding: 7px;
+            margin: auto;
+            height: 480px;
+
+        }
+
+        #display {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            margin-top: 30px;
+            margin-left: 15px;
+            height: 75px;
+            box-shadow: -1px 1px 3px -1px #000;
+            border-radius: 15px;
+        }
+
+        .cal-btn {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 80px);
+            gap: 5px;
+            padding: 15px;
+        }
+
+        .cal-btn>div {
+            box-shadow: -1px 1px 3px -1px #000;
+            border-radius: 10px;
+            margin: auto;
+            padding: 25px;
+        }
+
+        .black {
+            background: #000;
+            color: #fff;
+        }
+
+        .red {
+            background: red;
+            color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>MASAI CALCULATOR</h2>
+    <div id="container">
+        <div id="display"> </div>
+        <div class="cal-btn">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div class="black">+</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div class="black">-</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div class="black">*</div>
+            <div class="red">C</div>
+            <div>0</div>
+            <div class="black">=</div>
+            <div class="black">/</div>
+
+        </div>
+    </div>
+
+    <script>
+        var boxes = document.querySelectorAll('.cal-btn>div');
+        var bog = ''
+        for (i = 0; i < boxes.length; i++) {
+            boxes[i].addEventListener('click', newmyFunction)
+
+        }
+        function newmyFunction() {
+            var displaybox = event.target.innerText;
+
+            if (displaybox == 'C') {
+                document.querySelector('#display').innerText = ""
+            } else if (displaybox == '=') { 
+                document.querySelector('#display').innerText = eval(bog) 
+                   bog=""
+            }
+            else {
+                bog = bog + displaybox;
+                document.querySelector('#display').innerHTML = bog
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

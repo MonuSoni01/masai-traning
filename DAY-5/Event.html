@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>First H1</h1>
+    <h1>Second H1</h1>
+    <h3>First H3</h3>
+    <h3>Second H3</h3>
+    <h5>First H5</h5>
+    <h5>Second H5</h5>
+    <h5>Third H5</h5>
+
+    <div class="green">First DIV</div>
+    <div class="red">Second DIV</div>
+    <div class="blue">Third DIV</div>
+
+    <p class="green">First P</p>
+    <p class="red">Second P</p>
+    <p class="blue">Third P</p>
+
+    <hr>
+
+    <button id="changeH1">Change H1</button>
+    <button id="changeH3">Change H3</button>
+    <button id="changeH5">Change H5</button>
+    <button id="changeGreen">Change Green</button>
+    <button id="changeRed">Change Red</button>
+    <button id="changeBlue">Change Blue</button>
+
+    
+</body>
+<script>
+    var h1btn = document.getElementById('changeH1').addEventListener('click',myFunction)
+    function myFunction(){
+      var newh1 = document.getElementsByTagName('h1');
+       for(i=0; i<newh1.length ;i++){
+        newh1[i].style.color='red';
+       }
+    }
+
+    var h2btn = document.getElementById('changeH3').addEventListener('click',myFunction2)
+    function myFunction2(){
+      var newh2 = document.getElementsByTagName('h3');
+       for(i=0; i<newh2.length ;i++){
+        newh2[i].style.color='green';
+       }
+    }
+ 
+    var chah5 = document.getElementById('changeH5').addEventListener('click',myFunction3)
+    function myFunction3(){
+        var new3 = document.getElementsByTagName('h5');
+        for(i=0;i<new3.length;i++){
+            new3[i].style.color='blue';
+        }
+    } 
+</script>
+</html>

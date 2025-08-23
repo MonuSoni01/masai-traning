@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        .container{ 
+            padding: 50px 0px;
+            display: flex; 
+            justify-content: center;
+            align-items: center;  
+            display: flex;
+        } 
+        .row{
+            
+            position: relative;
+            bottom: 0px;
+            left: 15px;
+            
+        }
+        .row img{
+            width: 330px;
+            height: 400px;
+            border-radius: 15px;
+        }
+        .row h2{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }.row p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+        .row h5{
+           font-weight: bold;
+           font-size: 18px;            margin-top: 10px;
+        }
+        .row #price{
+            opacity: 0.5;
+            text-decoration: line-through;
+            margin-right: 9px;
+            margin-left: 10px
+        }
+        .row #dis{
+           color: red;
+           margin-right: 9px;
+        }
+        .row .content{
+            padding: 15px;
+        }
+        .row .offer{
+            position: absolute;
+            bottom: 170px;
+            left:225px;
+            z-index: 1;
+            background: rgb(203, 191, 191);
+            padding: 3px 6px;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+        @media (max-width:1024px) {
+            .container{ 
+            padding: 50px 0px;
+            display: flex; 
+            justify-content: center;
+            align-items: center;  
+           flex-wrap: wrap;
+        } 
+         
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/6100AXPNdBL._SY741_.jpg" alt=""/>
+            <span class="offer">BESTSELLER</span>
+            <div class="content">
+             <h2>PINK DRESS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <h5>$999 <span id="price">$2000</span> <span id="dis"> 50% OFF</span> </h5>
+            <p>1-2 Year,2-3 Year ,3-4 Year1-2 Year,2-3 Year ,3-4 Year</p>
+           </div>
+        </div>
+         <div class="row">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/6100AXPNdBL._SY741_.jpg" alt=""> <span class="offer">BESTSELLER</span>
+           <div class="content">
+             <h2>PINK DRESS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <h5>$999 <span id="price">$2000</span> <span id="dis"> 50% OFF</span> </h5>
+            <p>1-2 Year,2-3 Year ,3-4 Year1-2 Year,2-3 Year ,3-4 Year</p>
+           </div>
+        </div> <div class="row ">
+            <img src="https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/6100AXPNdBL._SY741_.jpg" alt=""> <span class="offer">BESTSELLER</span>
+          <div class="content">
+             <h2>PINK DRESS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+            <h5>$999 <span id="price">$2000</span> <span id="dis"> 50% OFF</span> </h5>
+            <p>1-2 Year,2-3 Year ,3-4 Year1-2 Year,2-3 Year ,3-4 Year</p>
+           </div>
+        </div>
+    </div>
+</body>
+</html>

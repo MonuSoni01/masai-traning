@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #container{
+        width:70% ;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,100px);
+        gap: 25px;
+        margin-top: 120px;
+      }
+      #container>div{
+        border: 1px solid #000;
+        border-radius: 15px;
+        padding: 12px;
+      }
+      .coff-div{
+
+        display: flex;
+        justify-content: space-between;
+      }
+      .coff-div>div:nth-child(1){
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+      } .coff-div>div:nth-child(2){
+        font-weight: bold;
+        color: red;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+      }
+       div p{
+       opacity: 0.5;
+       font-size: 14px; 
+       margin-top: 12px;
+      }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p>
+        </div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+        <div> <div class="coff-div"><div>cappuccino </div>
+            <div>$400</div></div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam magnam consectetur dolores accusamus quis excepturi.</p></div>
+    </div>
+</body>
+</html>

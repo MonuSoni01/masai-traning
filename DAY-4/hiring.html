@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 175px;
+        }
+
+        .img-box {
+            margin-top: 42px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 150px);
+            gap: 10px;
+        }
+
+        button {
+            border: 1px solid red;
+            background: transparent;
+            color: red;
+            padding: 10px 12px;
+            margin-top: 25px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        @media (max-width:1200px) {
+            .img-box { 
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(5, 150px);
+            }
+
+        }
+        @media (max-width:768px) {
+            .img-box { 
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(5, 150px);
+            }
+
+        }
+         @media (max-width:600px) {
+            .img-box { 
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, 150px);
+            }
+
+        }
+         @media (max-width:480px) {
+            .img-box { 
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(5, 150px);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h3>Have A Dream Company in Mind ?</h3>
+        <h2>Meet Our 700+ Hiring Partners</h2>
+        <div class="img-box">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/petro.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/mobiledoctor.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/wepro.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/artring.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/hpcl.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/Clients/gradicoglobal.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/aleczo.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/hosiptal.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/lostcity.webp" alt=""> <img
+                src="https://monudeveloper.netlify.app/assets/images/clients/petro.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/mobiledoctor.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/wepro.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/artring.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/hpcl.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/Clients/gradicoglobal.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/aleczo.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/hosiptal.webp" alt="">
+            <img src="https://monudeveloper.netlify.app/assets/images/clients/lostcity.webp" alt="">
+        </div>
+        <button>SEE More Partners ></button>
+    </div>
+</body>
+
+</html>

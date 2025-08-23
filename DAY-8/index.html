@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .newdic {
+            display: flex;
+            flex-wrap: wrap;
+            background: red;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="">
+            <form action="">
+                <select name="" id="catagory">
+                    <option value="Monu">MONU</option>
+                    <option value="Soni">SONI</option>
+                    <option value="Masai">MASAI</option>
+                    <option value="Coding">Coding</option>
+                </select>
+                <input type="text" name="" id="title"> <br>
+                <input type="text" name="" id="desc"> <br>
+                <input type="number" name="" id="price"> <br>
+                <input type="submit" value="Submit">
+            </form>
+
+        </div>
+        <div id="products">
+
+        </div>
+    </div>
+</body>
+<script>
+    var form = document.querySelector('form');
+    var products = document.querySelector('#products')
+
+    function display(data) {
+        var parent = document.createElement('div')
+        parent.setAttribute('class', 'newdic')
+
+        var heading = document.createElement('h2')
+        heading.innerText = data.title
+
+        var desc = document.createElement('p')
+        desc.innerText = data.desc
+
+        var price = document.createElement('p')
+        price.innerText = data.price
+
+        var catagory = document.createElement('p')
+        catagory.innerText = data.catagory
+
+        var btn = document.createElement('button')
+        btn.innerText= 'delete'
+        btn.addEventListener('click',function(event)
+    {
+        event.target.parentNode.remove()
+    })
+
+        parent.append(heading, desc, price, catagory,btn);
+
+        products.append(parent);
+    }
+
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var data = {
+            title: form.title.value,
+            desc: form.desc.value,
+            price: form.price.value,
+            catagory: form.catagory.value,
+        }
+        display(data)
+        console.log(data.title)
+    }
+
+    )
+
+</script>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p,h3{
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            margin-top: 50px;
+            width: 1200px;
+            display: grid;
+            grid-template-rows: 4fr;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 15px;
+            
+        }
+        .company_img{
+            max-height: 48px;
+        }
+        #container img{
+            border-radius: 12px 12px 0px 0px;
+        }
+        .main_Box{
+box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    let investors = [
+        {
+            name: "Vijay Shekhar Sharma",
+            role: "Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg",
+        },
+        {
+            name: "Kunal Shah",
+            role: "Founder",
+            image:
+                "https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png",
+        },
+
+        {
+            name: "Amrish Rau",
+            role: "CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png",
+        },
+        {
+            name: "Sampad Swain",
+            role: "Co-Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/instamojo_8763e704f7.png",
+        },
+        {
+            name: "Vijay Shekhar Sharma",
+            role: "Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg",
+        },
+        {
+            name: "Kunal Shah",
+            role: "Founder",
+            image:
+                "https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png",
+        },
+
+        {
+            name: "Amrish Rau",
+            role: "CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png",
+        },
+        {
+            name: "Sampad Swain",
+            role: "Co-Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/instamojo_8763e704f7.png",
+        }, {
+            name: "Vijay Shekhar Sharma",
+            role: "Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg",
+        },
+        {
+            name: "Kunal Shah",
+            role: "Founder",
+            image:
+                "https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png",
+        },
+
+        {
+            name: "Amrish Rau",
+            role: "CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png",
+        },
+        {
+            name: "Sampad Swain",
+            role: "Co-Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/instamojo_8763e704f7.png",
+        }, {
+            name: "Vijay Shekhar Sharma",
+            role: "Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg",
+        },
+        {
+            name: "Kunal Shah",
+            role: "Founder",
+            image:
+                "https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png",
+        },
+
+        {
+            name: "Amrish Rau",
+            role: "CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png",
+        },
+        {
+            name: "Sampad Swain",
+            role: "Co-Founder & CEO",
+            image:
+                "https://cdn.masaischool.com/masai-website/Sampad_swain_Instamojo_f12bf6341e.jpg",
+            companyLogo:
+                "https://cdn.masaischool.com/masai-website/instamojo_8763e704f7.png",
+        }
+    ];
+
+
+
+    investors.forEach(function (elem) {
+        var box = document.createElement("div");
+        box.setAttribute("class","main_Box")
+
+        var investor_avatar = document.createElement("img")
+        investor_avatar.setAttribute("src", (elem.image))
+
+        var investor_name = document.createElement("h3")
+        investor_name.innerText = elem.name
+        var investor_role = document.createElement("p")
+        investor_role.innerText = elem.role
+        var investor_company = document.createElement("img")
+        investor_company.setAttribute("class", "company_img")
+        investor_company.setAttribute("src", (elem.companyLogo))
+
+        box.append(investor_avatar,investor_name,investor_role , investor_company );
+        document.querySelector('#container').append(box);
+
+
+
+    })
+
+</script>
+
+</html>

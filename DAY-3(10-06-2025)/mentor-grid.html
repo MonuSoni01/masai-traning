@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #container {
+        margin: auto;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 200px);
+        gap: 25px;
+      }
+      #container div {
+        border: 1px solid red;
+      }
+      @media (max-width:990px) {
+        #container {
+         
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(6, 200px) ;
+      }
+      }
+      @media (max-width:720px) {
+        #container {
+         
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(8, 200px) ;
+      } 
+      @media (max-width:425px) {
+        #container { 
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(16, 200px) ;
+      }
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center; margin: 50px 20px">
+      HELLO MENTORS <br />
+      MONU DEVELOPER IS THERE
+    </h2>
+    <div id="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
