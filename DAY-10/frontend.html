@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+</body>
+<div id="navbar">
+    <Li><a href="frontend.html">FRONTEND</a></Li>
+    <Li><a href="backend.html">BACKEND</a></Li>
+</div>
+<div id="container"></div>
+<script>
+    var inverterMonu = (JSON.parse(localStorage.getItem('inversterDATA')))
+    inverterMonu.forEach(function (el) {
+        var box = document.createElement("div");
+
+        var i_avatar = document.createElement("img");
+        i_avatar.setAttribute("src", el.inversterimg);
+
+        var i_name = document.createElement("h3");  
+        i_name.innerText = el.inverstername;
+
+        var i_role = document.createElement("p");
+        i_role.innerText = el.inversterrole;
+
+        var i_logo = document.createElement("img");
+        i_logo.setAttribute("src", el.inverstercompany);
+
+        box.append(i_avatar, i_name, i_role, i_logo);
+
+        document.querySelector("#container").append(box);
+
+    });
+
+
+</script>
+
+</html>

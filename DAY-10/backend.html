@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+</head>
+
+<body>
+</body>
+<div id="navbar">
+    <Li><a href="frontend.html">FRONTEND</a></Li>
+    <Li><a href="backend.html">BACKEND</a></Li>
+</div>
+
+<form id="form" style="margin-top: 50px;">
+    <input type="text" id="name" placeholder="Person URL"> <br>
+    <input type="text" id="IMGurl" placeholder="Name"> <br>
+    <input type="text" id="role" placeholder="Role"> <br>
+    <input type="text" id="company" placeholder="COMPANY LOGO"> <br>
+    <input type="submit" value="SUBMIT">
+</form>
+<script> 
+
+    document.querySelector('#form').addEventListener('submit', myfunction)
+
+    var inverterMonu = JSON.parse(localStorage.getItem('inversterDATA')) || [];
+
+    function myfunction(e) {
+        e.preventDefault()
+        var inversterOBj =
+        {
+            inverstername: form.name.value,
+            inversterimg: form.IMGurl.value,
+            inversterrole: form.role.value,
+            inverstercompany: form.company.value
+        }
+
+        inverterMonu.push(inversterOBj);
+        console.log(inverterMonu)
+        localStorage.setItem('inversterDATA', JSON.stringify(inverterMonu));
+    }
+
+
+
+</script>
+
+</html>
