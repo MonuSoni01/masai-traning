@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        * #navbar ul {
+            list-style: none;
+            padding: 12px;
+        }
+
+        #navbar ul li {
+            list-style: none;
+        }
+
+        .list-styled {
+            list-style: none;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .contentSection {
+            gap: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="navbar" class="bg-primary">
+                    <ul class="d-flex justify-content-center align-items-center list-styled">
+                        <li><a href="#" class=" text-white ms-2">HOME</a></li>
+                        <li><a href="#" class="text-white ms-2">TODA</a></li>
+                        <li><a href="#" class="text-white ms-2">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <form id="taskAdd"> <input type="text" name="" id="taskdetails" class="mb-3"> <br> <input
+                            type="submit" value="Submit Task"> </form>
+                </div>
+                <div class="contentSection d-flex">
+                    <ul id="taskSubmit"> </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+       document.querySelector('#taskAdd').addEventListener('submit', myFunction) 
+var taskShow = JSON.parse(localStorage.getItem('AllTask')) || []
+
+function myFunction(e) {
+    e.preventDefault()
+
+    // input value le lo
+    var val = document.getElementById('taskdetails').value.trim();
+
+    if (val === "") {
+        alert('Enter Task')
+    } else {
+        var taskObj = { taskText: val }
+        taskShow.push(taskObj)
+        console.log(taskShow)
+
+        localStorage.setItem('AllTask', JSON.stringify(taskShow))
+
+        document.getElementById('taskdetails').value = ""
+        showTasks()
+    }
+}
+
+
+        function showTasks() {
+            var output = '';
+            var close = 'X'
+
+            taskShow.forEach(function (t, i) {
+                output += `<li>${t.taskText} <button type='button' onclick='removeTask(${i})' class='btn btn-danger'>X</button></li> `
+                // console.log(output)
+            })
+
+            document.getElementById("taskSubmit").innerHTML = output
+
+        } showTasks()
+
+
+        function removeTask(index) {
+            taskShow.splice(index, 1);
+            localStorage.setItem('AllTask', JSON.stringify(taskShow)); // persist
+            showTasks(); // UI refresh
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: darkblue;
+            padding: 10px;
+        }
+
+        #navbar li {
+            list-style: none;
+        }
+
+        #navbar li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <li><a href="frontend.html" style="margin-right: 20px;">FRONTEND </a></li>
+        <li><a href="backend.html">BACKEND</a></li>
+    </div>
+    <br> <br>
+    <form id="form">
+        <input type="text" name="" id="name" placeholder="Person Name">
+        <input type="text" name="" id="userImg" placeholder="Person Image">
+        <input type="text" name="" id="userRole" placeholder="Person Role">
+        <input type="text" name="" id="userCom" placeholder="Person Company">
+        <br>
+        <input type="submit" value="SUBMIT">
+    </form>
+</body>
+<script>
+    document.querySelector('#form').addEventListener('submit', myfunction)
+
+    var inversterArr = JSON.parse(localStorage.getItem('InvesterData')) || [] 
+
+    function myfunction(e) {
+        e.preventDefault();
+
+        var InversterObj = {
+            inversterName: form.name.value,
+            inversterImg: form.userImg.value,
+            inversterRole: form.userRole.value,
+            inversterCom: form.userCom.value
+        }
+
+        // console.log(InversterObj)
+        inversterArr.push(InversterObj);
+        console.log(inversterArr);
+        localStorage.setItem('InvesterData', JSON.stringify(inversterArr));
+
+    }
+</script>
+
+</html>

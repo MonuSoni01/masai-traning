@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: darkblue;
+        }
+
+        #navbar li {
+            list-style: none;
+        }
+
+        #navbar li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <li><a href="frontend.html" style="margin-right: 20px;">FRONTEND </a></li>
+        <li><a href="backend.html">BACKEND</a></li>
+    </div>
+
+    <div id="container">
+
+    </div>
+</body>
+
+<script>
+
+    var inversterArr = JSON.parse(localStorage.getItem('InvesterData'))
+
+    inversterArr.forEach(function (ele) {
+        var box = document.createElement('div')
+
+        var head = document.createElement('h2')
+        head.innerHTML= ele.inversterName
+
+        var PerImg = document.createElement('img')
+        PerImg.setAttribute('src',ele.inversterImg)
+
+        var Role = document.createElement('p')
+        Role.innerHTML= ele.inversterRole
+
+        var ComImg = document.createElement('img')
+        ComImg.setAttribute('src',ele.inversterCom)
+
+        box.append(head,PerImg,Role,ComImg)
+
+        document.querySelector('#container').append(box)
+
+    })
+</script>
+
+</html>
