@@ -48,3 +48,11 @@ tr > th {
   background-color: teal;
   color: white;
 }
+
+.bg-danger{
+  background: red;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}

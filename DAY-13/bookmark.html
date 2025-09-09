@@ -23,9 +23,10 @@
           <th>Email</th>
           <th>Job Applied</th>
           <th>Salary</th>
+          <th>Delete</th>
         </tr>
       </thead>
-      <tbody id="body">
+      <tbody id="tbody">
 
       </tbody>
       <p class="sumAll"></p>
@@ -35,17 +36,11 @@
 <script>
 
   var getBookData = JSON.parse(localStorage.getItem('bookmarks')) || [];
-  console.log(getBookData);
 
-  displayArr(getBookData);
+  function render() {
+    tbody.innerHTML = "";
 
-  var sum = getBookData.reduce(function (acc, elem) {
-    return acc + Number(elem.emplySalary);
-  }, 0); 
-  document.querySelector('.sumAll').textContent = "Total Salary = " + sum;
-
-  function displayArr(data) {
-    data.forEach(function (elem) {
+    getBookData.forEach(function (elem, index) {
       var tr = document.createElement('tr');
 
       var td1 = document.createElement('td');
@@ -59,13 +54,51 @@
 
       var td4 = document.createElement('td')
       td4.innerText = elem.emplySalary;
-      tr.append(td1, td2, td3, td4);
 
-      document.querySelector('tbody').append(tr);
+      var td5 = document.createElement('td')
+      var delBtn = document.createElement('button');
+      delBtn.textContent = 'Delete';
+      delBtn.className = 'del-btn';
+      delBtn.setAttribute('data-index', index)
+      td5.append(delBtn)
+
+      tr.append(td1, td2, td3, td4, td5);
+
+      document.querySelector('#tbody').append(tr);
 
     });
+
+
+
+
   }
 
+  tbody.addEventListener('click', function (e) {
+    if (e.target.classList.contains('del-btn')) { 
+      const idx = Number(e.target.getAttribute('data-index')); 
+      getBookData.splice(idx,1)
+      localStorage.setItem('bookmarks',JSON.stringify(getBookData));
+      render();
+    }
+  })
+
+
+
+
+  // tbody.addEventListener('click', function (e) {
+  //   if (e.target.classList.contains('del-btn')) {
+  //     const idx = Number(e.target.getAttribute('data-index'));
+  //     // Remove from array
+  //     getBookData.splice(idx, 1);
+  //     // Persist change
+  //     localStorage.setItem('bookmarks', JSON.stringify(getBookData));
+  //     // Re-render
+  //     render();
+  //   }
+  // });
+
+  // Initial render
+  render();
 
 </script>
 
