@@ -16,6 +16,19 @@
     <div><a href="bookmark.html">Bookmarks</a></div>
   </div>
 
+
+  <select id="nameSort">
+    <option value="">Sort Data By Name</option>
+    <option value="asc">Ascending</option>
+    <option value="dsc">Descending</option>
+  </select>
+
+  <select id="salarySort">
+    <option value="">Sort Data By Amount</option>
+    <option value="low">Low to High</option>
+    <option value="high">High to Low</option>
+  </select>
+
   <main>
     <table>
       <thead>
@@ -38,11 +51,57 @@
   var JobNewArr = JSON.parse(localStorage.getItem('jobList'))
 
   displayArr(JobNewArr)
+  document.querySelector('#nameSort').addEventListener('change', nameSort)
+  function nameSort() {
+    var getName = document.getElementById('nameSort').value;
+
+    if (getName == 'asc') {
+      JobNewArr.sort(function (a, b) {
+        var x = a.emplyName.toUpperCase();
+        var y = b.emplyName.toUpperCase();
+        if (x > y) { return 1; }
+        if (x < y) { return -1; }
+        return 0;
+      })
+    }
+
+    displayArr(JobNewArr)
+
+    if (getName == 'dsc') {
+      JobNewArr.sort(function (a, b) {
+        var x = a.emplyName.toUpperCase();
+        var y = b.emplyName.toUpperCase();
+        if (x > y) { return -1; }
+        if (x < y) { return 1; }
+        return 0;
+      })
+      displayArr(JobNewArr)
+
+    }
+  }
+
+  function salaryChange() {
+    var SalaryNew = document.getElementById('salarySort').value
+    if (SalaryNew == 'low') {
+      JobNewArr.sort(function (a, b) {
+        return a.emplySalary - b.emplySalary ;
+      })
+    }
+    displayArr(JobNewArr)
+    console.log(JobNewArr)
+    if (SalaryNew == 'high') {
+      JobNewArr.sort(function (a, b) {
+       return b.emplySalary - a.emplySalary;
+      })
+    }
+     displayArr(JobNewArr)
+  }
+
   var NeeArr = []
 
   function displayArr(data) {
+    document.querySelector('#body').innerHTML = '';
     data.forEach(function (elem) {
-      // console.log(elem)
       var tr = document.createElement('tr')
 
       var td1 = document.createElement('td')
@@ -63,15 +122,9 @@
       td5.style.cursor = 'pointer'
       td5.addEventListener('click', function () {
         BookFunt(elem)
-
       })
-
-
       tr.append(td1, td2, td3, td4, td5)
-
       document.querySelector('tbody').append(tr)
-
-
     })
 
     function BookFunt(elem) {
@@ -84,6 +137,8 @@
 
 
   }
+
+  document.querySelector('#salarySort').addEventListener('change', salaryChange)
 
 
 </script>
