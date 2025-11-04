@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="loading_image"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp0Vz1JnDQ6lykOJhEsvpcW3ttc8xPO1njhQ&s" alt=""
+        style="width: 300px;height: 300px;">
+
+    <script>
+
+
+        let image = document.getElementById('loading_image')
+
+        function checkContent() {
+
+            return true;
+        }
+
+        let content_promise = new Promise(function (resolve, reject) {
+
+            let content = checkContent()
+            setTimeout(()=>{
+                if (content) {
+                resolve("Data Is Loading")
+            }
+            else {
+                reject("Unable To fetch data")
+            }
+            },3000)
+        })
+
+        content_promise.then(function (value) {
+            image.src = "https://monudeveloper.netlify.app/assets/images/monusoni.jpg";
+        }).catch(function (message) {
+            image.src= 'https://media.licdn.com/dms/image/v2/C4D03AQFHBW2LizKCAw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1658492009823?e=2147483647&v=beta&t=nxViGiDzvGajIHLICQROspuqbL-EuZoyBmoJNCarCWY'
+        })
+
+    </script>
+</body>
+
+</html>

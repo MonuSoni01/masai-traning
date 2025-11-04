@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form onsubmit="SubmitDetails(event)" id="Details">
+        <input type="text" placeholder="Name" id="name">
+        <input type="text" placeholder="Brand" id="brand">
+        <input type="number" placeholder="Price" id="price">
+        <input type="submit">
+    </form>
+
+    <script>
+        function Product(name,brand,price)
+        {
+            this.name = name;
+            this.brand = brand;
+            this.price = price;
+
+        }
+
+        var arr= [];
+        function SubmitDetails(e) {
+            e.preventDefault();
+            var Data = document.getElementById('Details')
+            let name = Data.name.value;
+            let brand = Data.brand.value;
+            let price = Data.price.value;
+
+            let p = new Product (name,brand,price)
+            arr.push(p)
+            console.log(arr);
+            localStorage.setItem('AllData',JSON.stringify(arr))
+        }
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>

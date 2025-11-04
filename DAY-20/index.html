@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="navbar">
+  <a href="index.html">Add Student</a> |
+  <a href="dashboard.html">Dashboard</a> |
+  <a href="trash.html">Trash</a>
+</div>
+
+    <button><a href="dashboard.html" style="text-decoration: none;">DashBoard</a></button>
+    <h1>Add Students Details</h1>
+    <form onsubmit="storeData(event)" id="students_data">
+        <input type="text" id="name" placeholder="Name"><br><br>
+        <input type="text" id="course" placeholder="Course"><br><br>
+        <input type="text" id="unit" placeholder="Unit"><br><br>
+        <input type="text" id="image" placeholder="Image"><br><br>
+        <input type="text" id="batch" placeholder="Ft-Web Batch No.">
+        <input type="submit" value="SUBMIT DATA">
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

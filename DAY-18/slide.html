@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" onclick="start()" value="START" id="">
+    <input type="button" onclick="pause()" value="PAUSE" id="">
+
+    <div id="container"></div>
+
+
+    <script>
+
+       let i = 0;
+let intervalId;
+
+function start() {
+    // use correct key name
+    let images = JSON.parse(localStorage.getItem('image'));
+
+    if (!images || images.length === 0) {
+        alert("localStorage me koi image nahi hai!");
+        return;
+    }
+
+    let box = document.getElementById('container');
+
+    intervalId = setInterval(function () {
+        if (i === images.length) {
+            i = 0;
+        }
+
+        box.innerHTML = '';
+        let image = images[i];
+        console.log('i:', i, 'URL:', image);
+
+        let img = document.createElement('img');
+        img.src = image;
+        box.append(img);
+
+        i++;
+    }, 3000);
+}
+
+function pause() {
+    clearInterval(intervalId);
+}
+    </script>
+</body>
+
+</html>

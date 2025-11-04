@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="url" id="url">
+        <button onclick="submitImage()">Submit</button>
+        <button onclick="GetImage()">SlideShow</button>
+    </div>
+
+
+    <script>
+
+        function GetImage()
+        {
+            window.location.href='slide.html'
+        }
+
+        function submitImage() { 
+            let image = document.getElementById('url').value;  
+            let images = JSON.parse(localStorage.getItem('image')) || []
+            images.push(image)
+            
+            localStorage.setItem('image',JSON.stringify(images))
+
+            document.getElementById('url').value = null
+        }
+    </script>
+</body>
+
+</html>

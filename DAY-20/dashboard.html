@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="navbar">
+  <a href="index.html">Add Student</a> |
+  <a href="dashboard.html">Dashboard</a> |
+  <a href="trash.html">Trash</a>
+</div>
+
+<div id="container"></div>
+
+
+
+<script>
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+let container = document.querySelector("#container");
+
+students.forEach((s, i) => {
+  let card = document.createElement("div");
+  card.innerHTML = `
+    <img src="${s.image}" width="100">
+    <h3>${s.name}</h3>
+    <p>${s.course}</p>
+    <p>${s.unit}</p>
+    <p>${s.batch}</p>
+    <button onclick="removeStudent(${i})">Remove</button>
+  `;
+  container.append(card);
+});
+
+function removeStudent(index) {
+  let students = JSON.parse(localStorage.getItem("students")) || [];
+  let trash = JSON.parse(localStorage.getItem("trash")) || [];
+
+  let removed = students.splice(index, 1)[0];
+  trash.push(removed);
+
+  localStorage.setItem("students", JSON.stringify(students));
+  localStorage.setItem("trash", JSON.stringify(trash));
+
+  window.location.reload(); // refresh page
+}
+
+</script>
+ 
+</body>
+</html>
