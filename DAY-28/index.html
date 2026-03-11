@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        input,
+        button {
+            margin-top: 15px;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="form">
+            <select name="" id="category">
+                <option value="Electornic">Electornic</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Digital Products">Digital Products</option>
+            </select> <br>
+            <input type="text" name="" id="title"> <br>
+            <input type="text" name="" id="desc"> <br>
+            <input type="number" name="" id="price"> <br>
+
+            <button type="submit">ADD Product</button>
+        </form>
+    </div>
+    <div id="products">
+
+    </div>
+
+    <script>
+
+        var parent = document.getElementById('products');
+
+        function displayProducts(data)
+        {
+            var box = document.createElement('div');
+            var heading = document.createElement('h2')
+            heading.textContent= data.title;
+            
+            var para = document.createElement('p')
+            para.textContent= data.desc;
+
+            
+            var pasie = document.createElement('p')
+            pasie.textContent= data.price;
+
+            
+            var brand = document.createElement('p')
+            brand.textContent= data.category;
+
+           parent.append(heading,para,pasie,brand)
+        }
+
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var data = {
+                title: form.title.value,
+                desc: form.desc.value,
+                price: form.price.value,
+                category: form.category.value,
+            }
+            displayProducts(data)
+            console.log(data)
+
+        })
+
+
+    </script>
+</body>
+
+</html>

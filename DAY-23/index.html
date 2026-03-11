@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+    }
+    #photo-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .card h4 {
+      font-size: 14px;
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Photo Gallery</h2>
+  <div id="photo-container"></div>
+
+  <script>
+    let url = "https://jsonplaceholder.typicode.com/photos";
+
+    async function newData() {
+      try {
+        let res = await fetch(url);
+        let users = await res.json();
+
+        // Slice to show only first 20 (to avoid loading all 5000)
+        let limited = users.slice(0, 20);
+
+        let container = document.getElementById("photo-container");
+
+        limited.forEach(photo => {
+          let card = document.createElement("div");
+          card.classList.add("card");
+
+          card.innerHTML = `
+            <img src="${photo.thumbnailUrl}" alt="${photo.title}">
+            <h4>${photo.title}</h4>
+          `;
+
+          container.appendChild(card);
+        });
+
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      }
+    }
+
+    newData();
+  </script>
+
+</body>
+</html>
