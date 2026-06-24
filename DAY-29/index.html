@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="form" onsubmit="dataSubmit()">
+        <input type="text" id="email"> <br>
+        <input type="number" style="margin-top:10px" name="" id="pass"> <br>
+        <button type="submit" style="margin-top:10px">SENT</button>
+    </form>
+
+    <script>
+
+
+        function dataSubmit(e) {
+            event.preventDefault()
+            var email = document.getElementById('email').value;
+            var pass = document.getElementById('pass').value;
+            console.log("Email : ", email, "Password: ", pass)
+
+            localStorage.setItem('Email', JSON.stringify(email))
+
+            localStorage.setItem('Password', JSON.stringify(pass))
+
+            var testing = JSON.parse(localStorage.getItem('Email'))
+            
+            var news = document.createElement('p');
+            news.innerHTML= email;
+
+            document.querySelector('body').append(news)
+            
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
